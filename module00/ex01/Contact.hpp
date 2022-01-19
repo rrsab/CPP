@@ -24,11 +24,11 @@ public:
 	const std::string	getPhoneNumber() const;
 	const std::string	getDarkestSecret() const;
 
-	void		setFirstName;
-	void		setLastName;
-	void		setNickName;
-	void		setPhoneNumber;
-	void		setDarkestSecret;
+	void		setFirstName();
+	void		setLastName();
+	void		setNickName();
+	void		setPhoneNumber();
+	void		setDarkestSecret();
 };
 
 #endif

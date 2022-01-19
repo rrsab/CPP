@@ -21,5 +21,50 @@ Contact::~Contact()
 
 void Contact::setFirstName()
 {
-	firstName = getInput()
+	firstName = getInput("Enter a first name: ");
+}
+
+const std::string	Contact::getFirstName() const
+{
+	return (firstName);
+}
+
+void Contact::setLastName()
+{
+	lastName = getInput("Enter a last name: ");
+}
+
+const std::string	Contact::getLastName() const
+{
+	return (lastName);
+}
+
+void Contact::setNickName()
+{
+	nickName = getInput("Enter a nickname: ");
+}
+
+const std::string	Contact::getNickName() const
+{
+	return (nickName);
+}
+
+void Contact::setPhoneNumber()
+{
+	phoneNumber = getInput("Enter a phone number: ");
+}
+
+const std::string	Contact::getPhoneNumber() const
+{
+	return (phoneNumber);
+}
+
+void Contact::setDarkestSecret()
+{
+	darkestSecret = getInput("Enter a darkest secret : ");
+}
+
+const std::string	Contact::getDarkestSecret() const
+{
+	return (darkestSecret);
 }
