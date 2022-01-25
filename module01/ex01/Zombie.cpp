@@ -2,7 +2,7 @@
 
 int Zombie::index(1);
 
-Zombie::Zombie(std::string name) {
+Zombie::Zombie(std::string name): m_name(name) {
 	std::cout << "Zombie " << m_name << " rebelled!" << std::endl;
 }
 

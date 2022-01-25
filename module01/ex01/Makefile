@@ -1,6 +1,6 @@
 NAME			= zombie
 
-SOURCE			= Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SOURCE			= Zombie.cpp main.cpp ZombieHorde.cpp
 HEADERS			= Zombie.hpp
 
 OBJECT			=	$(SOURCE:.cpp=.o)
