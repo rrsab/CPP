@@ -1,14 +1,15 @@
-NAME			= ex03
+.PHONY: all clean fclean re
 
-SOURCE			= ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp \
-					main.cpp
-HEADERS			= ClapTrap.hpp ScavTrap.hpp Fragtrap.hpp DiamondTrap.hpp
+NAME			= ex00
+
+SOURCE			= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+HEADERS			= Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 OBJECT			=	$(SOURCE:.cpp=.o)
 
-COMPILE			= 	c++
+CXX				= 	c++
 
-FLAGS			= 	-Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
+CXXFLAGS		= 	-Wall -Wextra -Werror -std=c++98
 
 RESET			= 	\033[0m
 GREEN 			= 	\033[38;5;46m
@@ -19,13 +20,13 @@ RED 			= 	\033[38;5;160m
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	@echo "$(GREY)Compiling...				$(WHITE)$<"
-	@$(COMPILE) $(FLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECT)
 	@echo "$(GREEN)----------------------------------------------------"
-	@$(COMPILE) $(FLAGS) $(OBJECT) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJECT) -o $(NAME)
 	@echo "Executable				./$(NAME) $(RESET)"
 
 clean:
@@ -40,4 +41,3 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re

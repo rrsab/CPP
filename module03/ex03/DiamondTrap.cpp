@@ -45,7 +45,7 @@ DiamondTrap::DiamondTrap(std::string name) :	ClapTrap(100, 50, 30, name + "_clap
 
 void DiamondTrap::attack(const std::string &target)
 {
-    ClapTrap::attack(target);
+    ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI(void)
