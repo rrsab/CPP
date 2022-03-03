@@ -2,7 +2,7 @@
 
 NAME			= ex02
 
-SOURCE			= main.cpp MutantStack.cpp
+SOURCE			= main.cpp
 HEADERS			=
 
 OBJECT			=	$(SOURCE:.cpp=.o)

@@ -64,13 +64,12 @@ int main()
 	{
 		try
 		{
-			std::vector<int> tmp;
-			for (int i = 0; i < 10000; ++i)
-				tmp.push_back(i);
-			Span sp = Span(10000);
+			std::vector<int> tmp(10000);
+			std::generate(tmp.begin(), tmp.end(), std::rand);
+			Span sp = Span(10002);
 			sp.addNumber(tmp.begin(), tmp.end());
 			std::cout << "Max size: " << sp.getMaxSize() << std::endl;
-			std::cout << "Array: 0 1 .. 9999 10000" << std::endl;
+			std::cout << "Array: " << "sp" << std::endl;
 			std::cout << "shortest: " << sp.shortestSpan() << std::endl;
 			std::cout << "longest: " << sp.longestSpan() << std::endl << std::endl;
 		}

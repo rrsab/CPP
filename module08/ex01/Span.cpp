@@ -33,6 +33,7 @@ int Span::shortestSpan() {
 		throw std::out_of_range("no span to find");
 	std::sort(_array.begin(), _array.end());
 	int shortest = std::numeric_limits<int>::max();
+	//std::cout << "INT_MAX= " << shortest << "\n";
 	std::vector<int>::iterator prev;
 	std::vector<int>::iterator cur =_array.begin();
 	while (true)
@@ -66,11 +67,11 @@ unsigned int Span::getMaxSize() const {
 
 void Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator finish)
 {
-	int dist = std::distance(start, finish);
+	int dist = static_cast<int>(_array.size()) + std::distance(start, finish);
 
 	if (dist > static_cast<int>(_maxSize))
 		throw std::out_of_range("Span cannot be added, because out of range");
-	_array.insert(_array.begin(), start, finish);
+	_array.insert(_array.end(), start, finish);
 }
 
 std::ostream &operator<<(std::ostream &os, const Span &span)
